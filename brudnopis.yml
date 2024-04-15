@@ -1,0 +1,10 @@
+---
+# Przykładowy playbook zbierający informacje o macierzy IBM FS
+
+- hosts: localhost    # Za wykonanie modułów ibm.storage_virtualize odpowiada stacja kontrolna
+  gather_facts: true # bo nie obchodzi mnie co wiem o localhost
+
+  tasks:
+    - name: Wyświetlenie informacji o macierzy
+      debug:
+        var: ansible_facts
